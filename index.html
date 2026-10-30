@@ -4,7 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff8ef">
-  <meta name="description" content="2026 宇宙科技公司員工旅遊活動資訊與報名表">
+  <meta name="description" content="2026 宇宙科技公司員工旅遊活動資訊與報名表。瀏覽一日行程並完成線上報名。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fff8ef'/%3E%3Ccircle cx='45' cy='21' r='8' fill='%23ffd166'/%3E%3Cpath d='M6 50 L24 21 L38 42 L46 31 L58 50 Z' fill='%23f27065'/%3E%3C/svg%3E">
+
+  <!-- 社群分享預覽（LINE / Facebook / Slack 等） -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="宇宙科技公司員工旅遊">
+  <meta property="og:title" content="2026 宇宙科技公司員工旅遊｜活動名單與報名">
+  <meta property="og:description" content="一日行程：湖光山色、主題分享與分組體驗。填寫報名表即可完成線上報名。">
+  <meta property="og:url" content="https://hheng1161-ctrl.github.io/2026_company_trip/">
+  <meta property="og:image" content="https://hheng1161-ctrl.github.io/2026_company_trip/cover.jpg">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="2026 宇宙科技公司員工旅遊主視覺：湖光山色與遊湖船">
+  <meta name="twitter:card" content="summary_large_image">
+
   <title>2026 宇宙科技公司員工旅遊</title>
   <style>
     :root {
@@ -396,7 +411,9 @@
           }
           throw new Error("報名資料未能送出，請稍後再試。");
         }
-        status.textContent = "報名請求已送出；Google Sheet 的寫入結果仍需由主辦人確認。";
+        // no-cors 只能確認請求已送出，無法讀取回應（實際寫入結果由主辦人在試算表確認）。
+        // 頁面文案以使用者感受為主；技術限制寫在 README 給主辦人看。
+        status.textContent = "已送出報名！主辦人會再確認並與你聯繫。";
         status.dataset.state = "success";
         form.reset();
       } catch (error) {

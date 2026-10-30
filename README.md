@@ -23,6 +23,20 @@ python -m http.server 8000
 
 表單使用跨網域的單向送出方式；頁面只能確認送出請求，無法直接讀取 Google Sheet 是否成功寫入。請以試算表內容確認實際結果。
 
+> **關於頁面文案**：因為上述限制，前端送出成功後顯示的是「已送出報名！主辦人會再確認並與你聯繫。」
+> ——給報名者確定感，而不是技術細節。**真正需要「以試算表確認」的提醒留在本文件**（給主辦人看）。
+> 若日後要讓前端也能確認寫入結果，可在 `Code.gs` 加一個 `doGet` 回報目前報名人數，
+> 前端於送出後比對數字（此做法已在 HazardCheck 專案中驗證可行）。
+
+## 社群分享預覽
+
+已加入 Open Graph 標籤（`og:title` / `og:description` / `og:image` / `og:url`）
+與 `twitter:card`，並使用 `cover.jpg` 作為預覽圖，讓網址貼到 LINE 或 Facebook 時會顯示縮圖與標題。
+
+修改 `cover.jpg` 時請同步更新 `og:image:width` / `og:image:height`（目前 1536×1024）。
+分享預覽有快取，更新後若仍看到舊圖，可用
+[Facebook 分享偵錯工具](https://developers.facebook.com/tools/debug/) 重新抓取。
+
 ## GitHub Pages
 
 網站網址：<https://hheng1161-ctrl.github.io/2026_company_trip/>
